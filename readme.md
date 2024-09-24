@@ -17,12 +17,30 @@ See `train_controller.py` for example usage.
 
 ## Setup
 
-This code is tested with Python 3.10.10 and PyTorch 1.11.
+This code is tested with Python 3.10.
 
-* `poetry install`. This will install some items then error. The following commands will resolve the error.
-* `poetry run pip install setuptools==65.5.0 pip==21`
-* `poetry run pip install wheel==0.38.0`
-* `poetry run pip install gym==0.21`
-* Now run `poetry install` again 
+With the appropriate python version activated (for example, using [pyenv](https://github.com/pyenv/pyenv)), use either of the following options to install dependencies.
 
-Then, controller training can be run with `poetry run python train_controller.py`
+Note that the code is configured to use [Mosek](https://www.mosek.com/), which requires a license (of which an academic one is freely available).
+
+#### Install dependencies with [Poetry](https://python-poetry.org/)
+
+1) `poetry install`. This will install some items then error. The following commands will resolve the error.
+2) `poetry run pip install setuptools==65.5.0 pip==21`
+3) `poetry run pip install wheel==0.38.0`
+4) `poetry run pip install gym==0.21`
+5) Now run `poetry install` again.
+
+Then, controller training can be run with `poetry run python train_controller.py`.
+
+#### Install dependencies from `requirements.txt`
+
+Note: this option may require installing system dependencies such as cmake, ninja-build, and compilers for C, C++, and Fortran. The poetry installation system handles these dependencies.
+
+1) `pip install -r requirements.txt`. This will install some items then error. The following commands will resolve the error.
+2) `pip install setuptools==65.5.0 pip==21`
+3) `pip install wheel==0.38.0`
+4) `pip install gym==0.21`
+5) Now run `pip install -r requirements.txt` again.
+
+Then, controller training can be run with `python train_controller.py`.
