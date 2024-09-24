@@ -8,6 +8,10 @@ from utils import build_mlp
 
 
 class FullyConnectedNetwork(TorchModelV2, nn.Module):
+    """
+    A standard feed forward fully-connected neural network.
+    """
+
     def __init__(self, obs_space, action_space, num_outputs, model_config, name):
         nn.Module.__init__(self)
         super().__init__(obs_space, action_space, num_outputs, model_config, name)

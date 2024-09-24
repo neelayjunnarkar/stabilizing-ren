@@ -20,8 +20,6 @@ class RNN(RecurrentNetwork, nn.Module):
     where x is the state, v is the input to the nonlinearity phi,
     w is the output of the nonlinearity phi, y is the input,
     and u is the output.
-
-    Train with a method that calls project after each gradient step.
     """
 
     def __init__(

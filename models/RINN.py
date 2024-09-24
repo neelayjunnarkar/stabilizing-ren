@@ -23,8 +23,9 @@ class RINN(RecurrentNetwork, nn.Module):
     w is the output of the nonlinearity phi, y is the input,
     and u is the output.
 
-    Train with a method that calls project after each gradient step.
-    This projection only ensures well-posedness of the implicit equation.
+    This method includes projectins to ensure well-posedness of the implicit equation.
+    While ensuring well-posedness thus requires calling project after each gradient step,
+    it is typically numerically fine to skip some calls to project if desired for other reasons.
     """
 
     def __init__(

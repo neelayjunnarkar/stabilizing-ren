@@ -37,16 +37,18 @@ class DissipativeSimplestRINN(RecurrentNetwork, nn.Module):
     u(t)    = Cu x(t) + Duw w(t) + Duy y(t)
     w(t)    = phi(v(t))
 
-    where x is the state, v is the input to the nonlinearity phi,
-    w is the output of the nonlinearity phi, y is the input,
+    where x is the state, v is the input to the activation function phi,
+    w is the output of the activation function phi, y is the input,
     and u is the output.
-
-    Train with a method that calls project after each gradient step.
 
     This controller is parameterized in theta parameters and applies
     a projection as necessary to ensure closed-loop dissipativity.
     The particular type of projection used depends on the `mode` parameter.
     See "Synthesizing Neural Network Controllers with Closed-Loop Dissipativity Guarantees".
+
+    The projection method need not be called after every training step.
+    However, the dissipativity constraint is only guaranteed to be satisfied
+    after a call to the projection.
     """
 
     # Custom config parameters:

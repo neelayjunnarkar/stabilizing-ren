@@ -7,9 +7,11 @@ See `train_controller.py` for example usage.
 
 ## File Structure
 
-* `envs`: plant models.
 * `models`: controller models.
-  * The recurrent implicit neural network (RINN) model is in `dissipative_simplest_RINN.py`.
+  * See comments at the top of each file for further information on each model.
+  * The model we present, that ensures closed-loop dissipativity, is implemented in `dissipative_simplest_RINN.py`.
+  * An unconstrained recurrent implicit neural network (RINN) model is implemented in `RINN.py`.
+* `envs`: plant models.
 * `trainers.py`: trainers modified to include the projection step.
 
 ### Runnable files
@@ -18,10 +20,9 @@ See `train_controller.py` for example usage.
 ## Setup
 
 This code is tested with Python 3.10.
+Note that the code is configured to use [Mosek](https://www.mosek.com/), which requires a license (of which an academic one is freely available).
 
 With the appropriate python version activated (for example, using [pyenv](https://github.com/pyenv/pyenv)), use either of the following options to install dependencies.
-
-Note that the code is configured to use [Mosek](https://www.mosek.com/), which requires a license (of which an academic one is freely available).
 
 #### Install dependencies with [Poetry](https://python-poetry.org/)
 

@@ -19,9 +19,11 @@ class ImplicitModel(TorchModelV2, nn.Module):
     x = Delta(Ax + By)
 
     where x is the state, y is the input, u is the output,
-    and Delta is a nonlinearity.
+    and Delta is the activation functions.
 
-    Train with a method that calls project after each gradient step.
+    This method includes projectins to ensure well-posedness of the implicit equation.
+    While ensuring well-posedness thus requires calling project after each gradient step,
+    it is typically numerically fine to skip some calls to project if desired for other reasons.
 
     See Implicit Deep Learning, https://epubs.siam.org/doi/abs/10.1137/20M1358517
     """
