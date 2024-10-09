@@ -13,6 +13,7 @@ See `train_controller.py` for example usage.
   * An unconstrained recurrent implicit neural network (RINN) model is implemented in `RINN.py`.
 * `envs`: plant models.
 * `trainers.py`: trainers modified to include the projection step.
+* `trained_controllers`: contains the parameters for the trained controllers used in the experiments in the paper. See the paper or the comments in the relevant file in the `models` folder for how to form the controller from the parameters.
 
 ### Runnable files
 * `train_controller.py`: configure and train controllers.
